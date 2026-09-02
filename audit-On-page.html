@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On-Page SEO Checklist — 2026</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .slide {
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background: linear-gradient(135deg, #2d5f8d 0%, #1a3a52 100%);
+      padding: 40px 30px 50px 30px;
+      box-sizing: border-box;
+      page-break-after: always;
+      border-bottom: 3px solid #2d5f8d;
+    }
+
+    .slide:nth-child(2)  { background: linear-gradient(135deg, #3a7ca5 0%, #2d5f8d 100%); }
+    .slide:nth-child(3)  { background: linear-gradient(135deg, #2d5f8d 0%, #3a7ca5 100%); }
+    .slide:nth-child(4)  { background: linear-gradient(135deg, #3a7ca5 0%, #1a3a52 100%); }
+    .slide:nth-child(5)  { background: linear-gradient(135deg, #2d5f8d 0%, #1a3a52 100%); }
+    .slide:nth-child(6)  { background: linear-gradient(135deg, #3a7ca5 0%, #2d5f8d 100%); }
+    .slide:nth-child(7)  { background: linear-gradient(135deg, #2d5f8d 0%, #3a7ca5 100%); }
+    .slide:nth-child(8)  { background: linear-gradient(135deg, #3a7ca5 0%, #1a3a52 100%); }
+    .slide:nth-child(9)  { background: linear-gradient(135deg, #2d5f8d 0%, #1a3a52 100%); }
+    .slide:nth-child(10) { background: linear-gradient(135deg, #3a7ca5 0%, #2d5f8d 100%); }
+    .slide:nth-child(11) { background: linear-gradient(135deg, #2d5f8d 0%, #3a7ca5 100%); }
+    .slide:nth-child(12) { background: linear-gradient(135deg, #3a7ca5 0%, #1a3a52 100%); }
+    .slide:last-child { border-bottom: none; }
+
+    .container {
+      max-width: 1050px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.97);
+      padding: 40px;
+      text-align: left;
+      border-radius: 15px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2d5f8d;
+      font-size: 2em;
+      margin: 0 0 25px 0;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    h2 {
+      color: #2d5f8d;
+      background: transparent;
+      font-size: 1.25em;
+      padding: 0;
+      margin: 22px 0 10px 0;
+      font-weight: 800;
+      border-radius: 0;
+      border-left: none;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin-top: 8px;
+      background: linear-gradient(90deg, rgba(91,168,207,0.95), rgba(45,95,141,0.15));
+      border-radius: 999px;
+    }
+
+    h3 {
+      color: #2d5f8d;
+      font-size: 1.15em;
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+    }
+    h3::before {
+      content: "▸";
+      color: #5ba8cf;
+      margin-right: 10px;
+      font-size: 1.5em;
+    }
+
+    ul, ol {
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin: 10px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 6px 0;
+      color: #333;
+      font-weight: 500;
+    }
+    strong { color: #2d5f8d; font-weight: 800; }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 15px 0;
+    }
+    .comparison-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 15px 0;
+    }
+    .comparison-box {
+      background: linear-gradient(135deg, #f0f4f8 0%, #e6eef7 100%);
+      padding: 18px;
+      border-left: 6px solid #5ba8cf;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(45, 95, 141, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .comparison-box:hover { transform: translateY(-5px); }
+    .comparison-box h4 {
+      color: #2d5f8d;
+      margin: 0 0 10px 0;
+      font-size: 1em;
+      font-weight: 800;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.88em;
+      box-shadow: 0 4px 12px rgba(45, 95, 141, 0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th {
+      background: linear-gradient(135deg, #2d5f8d 0%, #3a7ca5 100%);
+      color: white;
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 800;
+      border-bottom: 4px solid #5ba8cf;
+      font-size: 0.95em;
+    }
+    td {
+      padding: 10px 10px;
+      border-bottom: 1px solid #e0e8f0;
+      color: #333;
+      font-weight: 500;
+      vertical-align: top;
+    }
+    tr:hover { background-color: #f8fafb; }
+    tr:last-child td { border-bottom: none; }
+
+    .key-insight {
+      background: linear-gradient(135deg, #e6f0f7 0%, #f0f4f8 100%);
+      border-left: 6px solid #5ba8cf;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 18px 0 0 0;
+      box-shadow: 0 4px 12px rgba(91, 168, 207, 0.2);
+    }
+    .key-insight p {
+      margin: 0;
+      font-size: 0.98em;
+      line-height: 1.6;
+      color: #2d5f8d;
+      font-weight: 800;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e6f0f7;
+      border: 1px solid rgba(91, 168, 207, 0.5);
+      color: #2d5f8d;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85em;
+      font-weight: 800;
+      margin: 0 6px 6px 0;
+    }
+
+    .callout {
+      background: #ffffff;
+      border: 1px dashed rgba(91, 168, 207, 0.9);
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 10px 0;
+      color: #2d5f8d;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      margin: 14px auto 0 auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 22px rgba(45, 95, 141, 0.18);
+    }
+    .slide-image {
+      display: block;
+      margin: 14px auto 0 auto;
+      max-width: 92%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 22px rgba(45, 95, 141, 0.18);
+    }
+
+    .img-placeholder {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      border: 2px dashed #5ba8cf;
+      background: linear-gradient(135deg, #f0f4f8 0%, #e6eef7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2d5f8d;
+      font-weight: 800;
+      text-align: center;
+      padding: 18px;
+      box-sizing: border-box;
+      margin: 12px 0 0 0;
+      font-size: 0.92em;
+    }
+
+    /* Numbered step badge */
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #2d5f8d, #3a7ca5);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 900;
+      font-size: 0.9em;
+      margin-right: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 3px 8px rgba(45,95,141,0.3);
+    }
+
+    /* Step row for checklist */
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 14px;
+      margin: 6px 0;
+      background: linear-gradient(135deg, #f0f4f8 0%, #e8eff7 100%);
+      border-radius: 8px;
+      border-left: 4px solid #5ba8cf;
+      font-size: 0.92em;
+    }
+    .step-row .step-content strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+    .step-row .step-content span {
+      color: #555;
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+
+    /* Code block for HTML snippets */
+    .code-block {
+      background: #1a3a52;
+      color: #a8d8f0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85em;
+      margin: 10px 0;
+      line-height: 1.5;
+      overflow-x: auto;
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 12px 0;
+    }
+    .do-box {
+      background: #f0f9f4;
+      border-left: 6px solid #27ae60;
+      padding: 14px;
+      border-radius: 8px;
+    }
+    .do-box h4 { color: #1e8449; margin: 0 0 8px 0; font-size: 0.95em; }
+    .dont-box {
+      background: #fdf3f3;
+      border-left: 6px solid #e74c3c;
+      padding: 14px;
+      border-radius: 8px;
+    }
+    .dont-box h4 { color: #c0392b; margin: 0 0 8px 0; font-size: 0.95em; }
+    .do-box ul, .dont-box ul { margin: 0; padding-left: 18px; }
+    .do-box li, .dont-box li { color: #333; font-size: 0.88em; }
+
+    @media print {
+      .slide {
+        height: 100vh;
+        margin: 0;
+        padding: 30px;
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+      .container { max-height: none; overflow: visible; }
+      body { margin: 0; padding: 0; }
+      img { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       SLIDE 1: Title + Learning Goals
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>✅ On-Page SEO Checklist</h1>
+      <!-- <p style="text-align:center; color:#5ba8cf; font-weight:700; margin:-15px 0 20px 0; font-size:1.05em;">
+        The Complete Task List for 2026 — 11 Optimisation Actions
+      </p> -->
+
+      <!-- <h2>📌 Learning Goals</h2>
+      <ul>
+        <li>Understand what <strong>on-page SEO</strong> is and why it drives both traditional rankings and AI-generated answers.</li>
+        <li>Execute each of the <strong>11 on-page tasks</strong> systematically on any webpage.</li>
+        <li>Recognise what <strong>good vs. bad</strong> practice looks like for titles, H1s, meta descriptions, URLs, and more.</li>
+        <li>Connect on-page decisions to <strong>business outcomes</strong>: traffic, CTR, conversion, and search visibility.</li>
+      </ul> -->
+
+      <h2>Task Checklist at a Glance</h2>
+      <div style="margin-top:8px;">
+        <span class="tag">① Keyword Research</span>
+        <span class="tag">② Title Tag</span>
+        <span class="tag">③ H1 Tag</span>
+        <span class="tag">④ Meta Description</span>
+        <span class="tag">⑤ URL Name</span>
+        <span class="tag">⑥ Body Keywords</span>
+        <span class="tag">⑦ Content Quality</span>
+        <span class="tag">⑧ Header Tags</span>
+        <span class="tag">⑨ Internal Links</span>
+        <span class="tag">⑩ Visual Content</span>
+        <span class="tag">⑪ Schema Markup</span>
+      </div>
+
+      <div class="key-insight">
+        <p>💡 On-page SEO = everything you control <em>within</em> a page to signal relevance, quality, and intent to search engines. It is the foundation before off-page (links) or technical SEO can amplify results.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 2: What Is On-Page SEO + Why It Matters
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>What Is On-Page SEO &amp; Why Does It Matter?</h1>
+
+      <h2>📖 Definition</h2>
+      <ul>
+        <li><strong>On-page SEO</strong> refers to the optimisations you apply directly <em>on a webpage</em> to improve its relevance, user experience, and visibility in search results.</li>
+        <li>It covers both <strong>content elements</strong> (text, headings, keywords) and <strong>HTML elements</strong> (title tags, meta descriptions, schema).</li>
+        <li>In 2026, on-page signals also influence whether your content is cited in <strong>AI-generated answers</strong> (Google AI Overviews, ChatGPT, Perplexity).</li>
+      </ul>
+
+      <h2>⚡ On-Page vs Off-Page vs Technical SEO</h2>
+      <div class="comparison-3">
+        <div class="comparison-box">
+          <h4>🖥️ On-Page SEO</h4>
+          <ul>
+            <li>Content quality &amp; relevance</li>
+            <li>Keyword usage</li>
+            <li>Title tags, H1s, meta</li>
+            <li>Internal links, schema</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>🔗 Off-Page SEO</h4>
+          <ul>
+            <li>Backlinks from other sites</li>
+            <li>Brand mentions</li>
+            <li>Social signals</li>
+            <li>Digital PR</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>⚙️ Technical SEO</h4>
+          <ul>
+            <li>Page speed &amp; Core Web Vitals</li>
+            <li>Crawlability &amp; indexation</li>
+            <li>Mobile-friendliness</li>
+            <li>HTTPS &amp; site structure</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>💼 Business Impact of On-Page SEO</h2>
+      <table>
+        <thead>
+          <tr><th>On-Page Action</th><th>Business Outcome</th><th>KPI Lever</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Keyword targeting</td><td>Page appears for right queries</td><td><strong>Traffic ↑</strong></td></tr>
+          <tr><td>Optimised title &amp; meta</td><td>Higher click-through rate from SERP</td><td><strong>CTR ↑</strong></td></tr>
+          <tr><td>Content quality &amp; intent match</td><td>Lower bounce, longer session</td><td><strong>Engagement ↑</strong></td></tr>
+          <tr><td>Schema markup</td><td>Rich results → more real-estate on SERP</td><td><strong>Visibility ↑</strong></td></tr>
+          <tr><td>Internal linking</td><td>Guides users deeper into funnel</td><td><strong>Conversion ↑</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-insight">
+        <p>💡 On-page SEO is entirely within your control — no external partnerships needed. It is the highest-ROI starting point for any SEO programme because every improvement you make compounds over time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 3: Task 1 — Keyword Research
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Task ① — Identify Target Keywords</h1>
+
+      <h2>🎯 Why Keywords Come First</h2>
+      <ul>
+        <li>Every on-page optimisation is anchored to a <strong>target keyword</strong> — the term your ideal visitor types into Google.</li>
+        <li>Without keyword research, you're optimising in the dark: you might write great content that nobody is searching for.</li>
+        <li>Keywords also tell you the <strong>search intent</strong> you need to satisfy (Informational / Navigational / Commercial / Transactional).</li>
+      </ul>
+
+      <h2>📐 Three Filters for Choosing the Right Keyword</h2>
+      <div class="comparison-3">
+        <div class="comparison-box">
+          <h4>📊 Search Volume</h4>
+          <ul>
+            <li>Average monthly searches</li>
+            <li>Higher = more potential traffic</li>
+            <li>But high volume = high competition</li>
+            <li>Balance volume with feasibility</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>🏋️ Keyword Difficulty (KD%)</h4>
+          <ul>
+            <li>How hard to rank in top 10</li>
+            <li>Use <em>Personal KD%</em> in Semrush — adjusted to your domain's authority</li>
+            <li>Lower PKD = higher chance of ranking</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>🧭 Search Intent</h4>
+          <ul>
+            <li>What does the user actually want?</li>
+            <li>Match page type to intent (I / N / C / T)</li>
+            <li>Wrong intent = low rankings even with optimisation</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>📌 Practical Example — Flower Shop</h2>
+      <div class="callout">
+        <strong>"blue flowers"</strong> — 74,000 searches/month but SERP is dominated by informational articles and AI Overviews.<br/>
+        If your goal is <strong>transactional sales</strong>, this keyword is a poor fit despite its volume.<br/>
+        Better target: <strong>"buy blue hydrangeas online"</strong> — lower volume, but exact buyer intent, higher conversion probability.
+      </div>
+
+      <h2>🇮🇳 India-Relevant Examples</h2>
+      <ul>
+        <li><strong>High volume, wrong intent:</strong> "SBI" (navigational — people want the login page, not your article)</li>
+        <li><strong>Right intent, achievable KD:</strong> "best zero balance savings account India 2024" (commercial)</li>
+        <li><strong>Transactional gold:</strong> "buy Ather 450X scooter online" (clear purchase intent)</li>
+      </ul>
+
+      <div class="key-insight">
+        <p>💡 Use Semrush Keyword Magic Tool: enter a seed keyword → filter by Volume, Intent, and Personal KD% → shortlist 5–10 primary targets per page. This list drives every other task in this checklist.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 4: Tasks 2 & 3 — Title Tag + H1
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Tasks ② &amp; ③ — Title Tag &amp; H1 Tag</h1>
+
+      <h2>🏷️ Task 2: Optimise the Title Tag</h2>
+      <ul>
+        <li>The title tag is the <strong>clickable blue headline</strong> users see on the SERP — it's your first impression.</li>
+        <li>Google may generate its own title; a well-written tag <em>reduces</em> that likelihood.</li>
+      </ul>
+
+      <div class="code-block">&lt;title&gt;What Is a Title Tag &amp; How to Optimise Your Title Tags for SEO&lt;/title&gt;</div>
+
+      <div class="do-dont">
+        <div class="do-box">
+          <h4>✅ DO</h4>
+          <ul>
+            <li>Place primary keyword near the start</li>
+            <li>Keep to ~55 characters max</li>
+            <li>Write clearly and descriptively</li>
+            <li>Add secondary keywords naturally</li>
+            <li>Make it click-worthy (compelling)</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <h4>❌ DON'T</h4>
+          <ul>
+            <li>Stuff keywords awkwardly</li>
+            <li>Exceed 55–60 chars (gets truncated)</li>
+            <li>Use vague titles like "Home" or "Page 1"</li>
+            <li>Duplicate titles across pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>📰 Task 3: Use One H1 Tag Per Page</h2>
+      <ul>
+        <li>The H1 is the <strong>on-page headline</strong> users see when they land — separate from the title tag.</li>
+        <li>Only one H1 per page. It can be slightly longer and more descriptive than your title tag.</li>
+      </ul>
+
+      <div class="do-dont">
+        <div class="do-box">
+          <h4>✅ DO</h4>
+          <ul>
+            <li>Include primary keyword near the start</li>
+            <li>Hook readers with action words</li>
+            <li>Align H1 with the page's actual content</li>
+            <li>Keep it clear — tell users exactly what to expect</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <h4>❌ DON'T</h4>
+          <ul>
+            <li>Use multiple H1s on one page</li>
+            <li>Make promises the content can't keep</li>
+            <li>Leave it identical to the title tag (missed opportunity)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="key-insight">
+        <p>💡 Title Tag = SERP real estate (drives CTR). H1 Tag = on-page first impression (drives engagement). Both must include your primary keyword and be <em>consistent with each other</em> — but not necessarily identical.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 5: Tasks 4 & 5 — Meta Description + URL Slug
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Tasks ④ &amp; ⑤ — Meta Description &amp; URL Name</h1>
+
+      <h2>📝 Task 4: Write a Meta Description That Boosts Clicks</h2>
+      <ul>
+        <li>The meta description is the <strong>short text beneath your title</strong> on the SERP — not a direct ranking factor, but a major driver of <strong>click-through rate (CTR)</strong>.</li>
+        <li>Google may rewrite it, but a well-crafted description reduces that risk and gives you brand control.</li>
+      </ul>
+
+      <div class="code-block">&lt;meta name="description" content="Learn the 11-step on-page SEO checklist to rank higher in 2026. Covers title tags, keywords, schema, and more."&gt;</div>
+
+      <div class="comparison">
+        <div class="comparison-box">
+          <h4>✅ Meta Description Best Practices</h4>
+          <ul>
+            <li>Include target keyword naturally (Google bolds it)</li>
+            <li>State clearly what the page delivers</li>
+            <li>Mention what makes you unique</li>
+            <li>Use a soft CTA: "discover," "learn," "explore"</li>
+            <li>Stay under ~105 characters to avoid truncation</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>❌ Common Mistakes</h4>
+          <ul>
+            <li>Exceeding 105 chars (cut off on mobile)</li>
+            <li>Generic descriptions duplicated across pages</li>
+            <li>Pushy phrases: "Click here now!!!"</li>
+            <li>No keyword — misses the bold-in-SERP advantage</li>
+            <li>Leaving it blank — Google picks something random</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>🔗 Task 5: Create SEO-Friendly URL Slugs</h2>
+      <ul>
+        <li>The URL slug is the <strong>unique part of your web address</strong> that identifies a specific page.</li>
+        <li>A clear slug signals relevance to both users and crawlers before they even open the page.</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Rule</th><th>Good Example</th><th>Bad Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Use primary keyword</td><td>/on-page-seo-checklist</td><td>/page1-id-4432</td></tr>
+          <tr><td>Separate words with hyphens</td><td>/fresh-flower-delivery</td><td>/freshflowerdelivery</td></tr>
+          <tr><td>Keep it short</td><td>/summer-flowers</td><td>/beautiful-fresh-summer-flowers-2025</td></tr>
+          <tr><td>Avoid special characters</td><td>/seo-guide</td><td>/seo_guide?ref=3</td></tr>
+          <tr><td>Skip stop words</td><td>/keyword-research</td><td>/a-guide-to-the-keyword-research</td></tr>
+          <tr><td>Avoid dated slugs (evergreen)</td><td>/gst-guide</td><td>/gst-guide-2023</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-insight">
+        <p>💡 If you ever change a URL slug on an existing page, always set up a <strong>301 redirect</strong> from the old URL to the new one — otherwise you lose all the ranking power (link equity) that page had built up.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 6: Tasks 6 & 7 — Body Keywords + Content Quality
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Tasks ⑥ &amp; ⑦ — Body Keywords &amp; Content Quality</h1>
+
+      <h2>🔤 Task 6: Add Target Keywords to Body Content</h2>
+      <ul>
+        <li>Keywords in body text help search engines and AI tools <strong>confidently match your page</strong> to relevant queries.</li>
+        <li>The goal is <strong>natural incorporation</strong> — not mechanical repetition.</li>
+      </ul>
+
+      <div class="do-dont">
+        <div class="do-box">
+          <h4>✅ Natural Keyword Use</h4>
+          <ul>
+            <li>Place main keyword in the <strong>first paragraph</strong></li>
+            <li>Use <strong>related terms</strong> that add context (LSI keywords)</li>
+            <li>Use keyword <strong>variations</strong> that fit naturally</li>
+            <li>Study top-ranking pages for keyword patterns</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <h4>❌ Keyword Stuffing</h4>
+          <ul>
+            <li>Forcing a keyword every sentence</li>
+            <li>Unnatural repetition: "best UPI app — use best UPI app…"</li>
+            <li>Hidden text tricks (Google penalises these)</li>
+            <li>Copying competitor content verbatim</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>🏆 Task 7: Review Your Content Quality</h2>
+      <p style="font-size:0.93em; color:#444; line-height:1.6;">High-quality content performs better in traditional SERPs <em>and</em> is more likely to be cited in AI-generated answers. Use these quality indicators as a review checklist:</p>
+
+      <table>
+        <thead>
+          <tr><th>Quality Indicator</th><th>Best Practice</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Search Intent Match</strong></td><td>Does the page deliver what the searcher actually wanted? Mismatched intent = high bounce rate.</td></tr>
+          <tr><td><strong>Accuracy</strong></td><td>Are all facts correct and up to date? Fix errors proactively — outdated content loses rankings.</td></tr>
+          <tr><td><strong>Originality</strong></td><td>Does the content offer unique perspective or data? Avoid duplicating content within your own site.</td></tr>
+          <tr><td><strong>Answer Clarity</strong></td><td>Start sections with direct answers. "What is X?" → define X immediately. Helps featured snippet capture.</td></tr>
+          <tr><td><strong>Readability</strong></td><td>Short sentences, simple language, examples. Match complexity to your audience's level.</td></tr>
+          <tr><td><strong>Structure</strong></td><td>Headers, short paragraphs, bullet points. Easy to scan = better engagement and AI citability.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-insight">
+        <p>💡 Tool tip: Run pages through <strong>Semrush SEO Writing Assistant</strong> for real-time SEO + readability + tone scoring against your top 10 competitors. It also checks for plagiarism.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 7: Task 8 — Header Tags Structure
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Task ⑧ — Organise Content with Header Tags</h1>
+
+      <h2>📋 What Are Header Tags?</h2>
+      <ul>
+        <li>Header tags range from <strong>H1 to H6</strong> and create a structured, nested outline of your page.</li>
+        <li>They help readers navigate long-form content <em>and</em> help search engines understand your content hierarchy for AI answer extraction.</li>
+        <li>Only one <strong>H1</strong> per page — all others (H2, H3…) can be used multiple times.</li>
+      </ul>
+
+      <h2>🏗️ The Correct Hierarchy</h2>
+      <div class="callout">
+        <strong>H1</strong> — Main page topic (used once)<br/>
+        &nbsp;&nbsp;&nbsp;<strong>H2</strong> — Primary section heading<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>H3</strong> — Subsection within an H2<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>H4</strong> — Deeper subsection (use sparingly)<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>H5 / H6</strong> — Rarely needed; only for highly structured content
+      </div>
+
+      <h2>✅ Header Tag Best Practices</h2>
+      <div class="comparison">
+        <div class="comparison-box">
+          <h4>Writing Good Headers</h4>
+          <ul>
+            <li>Descriptive — preview the section's content</li>
+            <li>Include target or related keywords <em>naturally</em></li>
+            <li>Hook readers: frame as questions or benefits</li>
+            <li>Keep logical flow: each H2 should be a distinct topic</li>
+            <li>Keep each section focused on one idea</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>Why It Matters for AI Search</h4>
+          <ul>
+            <li>AI Overviews often extract content from clearly structured sections</li>
+            <li>Well-labelled H2s act like <em>answer containers</em></li>
+            <li>FAQ-style H3s (Q&amp;A format) are frequently cited by AI</li>
+            <li>Poorly structured content is harder for AI to parse and cite</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>📌 Real Example — On-Page SEO Article</h2>
+      <div class="callout" style="font-family: 'Courier New', monospace; font-size:0.88em; line-height:1.8;">
+        <strong>H1:</strong> On-Page SEO Checklist: The Complete Task List for 2026<br/>
+        &nbsp;&nbsp;<strong>H2:</strong> 1. Identify Target Keywords<br/>
+        &nbsp;&nbsp;<strong>H2:</strong> 2. Optimise the Title Tag<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>H3:</strong> How to check title tags in Semrush<br/>
+        &nbsp;&nbsp;<strong>H2:</strong> 3. Use an H1 Tag for Your Headline<br/>
+        &nbsp;&nbsp;<strong>H2:</strong> 4. Write a Meta Description…
+      </div>
+
+      <div class="key-insight">
+        <p>💡 Think of header tags as your page's <em>table of contents</em>. A reader should be able to skim all your H2s and immediately understand the full scope of your page — without reading a single paragraph.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 8: Task 9 — Internal Links
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Task ⑨ — Internal Linking Strategy</h1>
+
+      <h2>🔗 What Are Internal Links?</h2>
+      <ul>
+        <li>Internal links are <strong>hyperlinks between pages on the same website</strong>.</li>
+        <li>They serve three purposes simultaneously: user navigation, search engine crawling, and <strong>distributing ranking power (link equity)</strong> across your site.</li>
+        <li>A well-structured internal linking strategy turns individual strong pages into <em>rising tides that lift all boats</em>.</li>
+      </ul>
+
+      <h2>⚙️ How Internal Links Work</h2>
+      <div class="comparison">
+        <div class="comparison-box">
+          <h4>For Users 👤</h4>
+          <ul>
+            <li>Helps readers discover related, relevant content</li>
+            <li>Guides users from informational articles toward commercial/transactional pages</li>
+            <li>Reduces bounce rate — users stay on your site longer</li>
+            <li>Improves user experience and session depth</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>For Search Engines 🤖</h4>
+          <ul>
+            <li>Helps Google discover and crawl all your pages</li>
+            <li>Communicates which pages are most important (more links = more importance)</li>
+            <li>Passes "link equity" from strong pages to weaker ones</li>
+            <li>Anchor text provides keyword context to the linked page</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <h2>✅ Internal Linking Best Practices</h2>
+      <table>
+        <thead>
+          <tr><th>Practice</th><th>Why It Matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Use <strong>descriptive anchor text</strong></td><td>Tells users and Google what the linked page is about. Avoid "click here."</td></tr>
+          <tr><td>Place links <strong>where they naturally fit</strong></td><td>Forced links feel spammy and hurt UX — readers notice.</td></tr>
+          <tr><td>Link to your <strong>most important pages</strong> often</td><td>More internal links = more equity passed = stronger rankings for those pages.</td></tr>
+          <tr><td><strong>Blog → Product page</strong> links</td><td>Bridges informational content to transactional pages — boosts conversion journey.</td></tr>
+          <tr><td>Avoid <strong>overlinking</strong> one page</td><td>Linking to the same page 10 times on one article dilutes value.</td></tr>
+          <tr><td>Add <strong>external links</strong> to credible sources</td><td>Citing authoritative sources builds trust and content credibility.</td></tr>
+        </tbody>
+      </table> -->
+
+      <div class="key-insight">
+        <p>💡 Internal linking is your <em>site architecture in action</em>. Map out your content in tiers — pillar pages (broad topics) → cluster pages (subtopics) — and link them together. This structure signals topical authority to Google.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 9: Task 10 — Visual Content
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Task ⑩ — Add &amp; Optimise Visual Content</h1>
+
+      <h2>🖼️ Why Visuals Matter for SEO</h2>
+      <ul>
+        <li>Images and videos make pages <strong>more engaging</strong> — reducing bounce rate and increasing dwell time.</li>
+        <li>Optimised visuals give search engines additional signals through <strong>alt text, file names, and captions</strong>.</li>
+        <li>Videos increase the chance of appearing in <strong>video carousels</strong> on SERPs — a separate source of organic traffic.</li>
+      </ul>
+
+      <h2>📸 Image Optimisation Checklist</h2>
+      <div class="comparison">
+        <div class="comparison-box">
+          <h4>Content &amp; Placement</h4>
+          <ul>
+            <li>Choose images that <em>enhance</em> your content's message</li>
+            <li>Place images next to the relevant body text they support</li>
+            <li>Use original images where possible (stock photos rank less well)</li>
+            <li>Add descriptive captions — they're often read when users skim</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>Technical Optimisation</h4>
+          <ul>
+            <li><strong>Alt text:</strong> Describe the image in plain English — include keyword if natural. Helps visually impaired users too.</li>
+            <li><strong>File name:</strong> Use "blue-hydrangea-bouquet.jpg" not "IMG_4432.jpg"</li>
+            <li><strong>Compression:</strong> Use TinyPNG or WebP format — keep file size under 100KB where possible</li>
+            <li><strong>Dimensions:</strong> Serve correctly sized images for mobile vs desktop</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>🎬 Video Optimisation Checklist</h2>
+      <ul>
+        <li>Create video content that <strong>matches your page's purpose</strong> — tutorials for how-to guides, demos for product pages.</li>
+        <li><strong>Host on YouTube</strong> and embed from there — keeps your page load fast and gains dual visibility (YouTube + Google).</li>
+        <li>Add <strong>closed captions / subtitles</strong> — improves accessibility and gives Google more indexable text.</li>
+        <li>Write a keyword-rich <strong>video title and description</strong> on YouTube itself.</li>
+      </ul>
+
+      <div class="callout">
+        🇮🇳 <strong>India context:</strong> With over 600M+ mobile internet users, image compression is not optional — slow-loading pages on low-bandwidth connections directly lose traffic and conversions. Always optimise for mobile-first.
+      </div>
+
+      <div class="key-insight">
+        <p>💡 Alt text is your image's "keyword." A well-written alt attribute like "woman using PhonePe app for UPI transfer" signals both the <em>image content</em> and the <em>topical context</em> of your page to Google Image Search and the main SERP.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 10: Task 11 — Schema Markup
+  ============================================================ -->
+  <!-- <div class="slide">
+    <div class="container">
+      <h1>Task ⑪ — Apply Schema Markup (Structured Data)</h1>
+
+      <h2>🧩 What Is Schema Markup?</h2>
+      <ul>
+        <li>Schema markup is <strong>structured code added to your HTML</strong> that gives search engines richer, machine-readable information about your page's content.</li>
+        <li>Google uses it to generate <strong>rich results</strong> — enhanced SERP listings with ratings, prices, event dates, FAQs, and more.</li>
+        <li>Rich results take up more visual space on the SERP → <strong>higher CTR</strong> even at the same ranking position.</li>
+      </ul>
+
+      <h2>📋 Common Schema Types &amp; When to Use Them</h2>
+      <table>
+        <thead>
+          <tr><th>Schema Type</th><th>Best For</th><th>Rich Result Shown</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Article</strong></td><td>Blog posts, news articles</td><td>Date, author, breadcrumbs</td></tr>
+          <tr><td><strong>Product</strong></td><td>Ecommerce product pages</td><td>Price, availability, ratings</td></tr>
+          <tr><td><strong>FAQ</strong></td><td>FAQ sections on any page</td><td>Expandable Q&amp;A directly in SERP</td></tr>
+          <tr><td><strong>HowTo</strong></td><td>Step-by-step guides</td><td>Steps displayed visually in SERP</td></tr>
+          <tr><td><strong>Local Business</strong></td><td>Physical store/service pages</td><td>Address, hours, map listing</td></tr>
+          <tr><td><strong>Recipe</strong></td><td>Food/cooking content</td><td>Ratings, cook time, ingredients</td></tr>
+          <tr><td><strong>Event</strong></td><td>Webinars, conferences, concerts</td><td>Date, time, location</td></tr>
+          <tr><td><strong>Review</strong></td><td>Product and service reviews</td><td>Star ratings in SERP snippet</td></tr>
+        </tbody>
+      </table>
+
+      <h2>🛠️ Implementation Tips</h2>
+      <ul>
+        <li>Use <strong>JSON-LD format</strong> (Google's preferred method) — add the script block in your page's &lt;head&gt; or &lt;body&gt;.</li>
+        <li>Validate your schema using <strong>Google's Rich Results Test</strong> before publishing.</li>
+        <li>Only add schema that <em>accurately reflects your page</em> — misleading markup can result in a Google manual action.</li>
+        <li>For WordPress sites: use plugins like <strong>Yoast SEO</strong> or <strong>Rank Math</strong> to add schema without coding.</li>
+      </ul>
+
+      <div class="key-insight">
+        <p>💡 FAQ schema is the fastest win: add a FAQ section at the bottom of any informational page, mark it up with FAQ schema, and you can <em>double the SERP real-estate</em> your single result occupies — often overtaking competitors with higher rankings.</p>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- ============================================================
+       SLIDE 11: Technical SEO — The Foundation Under On-Page SEO
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Technical SEO — The Foundation That Enables On-Page SEO</h1>
+
+      <h2>⚙️ Why Technical SEO Matters Alongside On-Page</h2>
+      <ul>
+        <li>Even a perfectly optimised page <strong>won't rank</strong> if it can't be crawled, indexed, or loaded quickly.</li>
+        <li>Technical SEO creates the conditions in which on-page SEO can succeed.</li>
+        <li>In 2026, <strong>Core Web Vitals</strong> are confirmed ranking signals — especially for mobile.</li>
+      </ul>
+
+      <h2>🔧 Key Technical Checks</h2>
+      <div class="comparison">
+        <div class="comparison-box">
+          <h4>Crawlability &amp; Indexation</h4>
+          <ul>
+            <li>Ensure pages aren't accidentally <strong>blocked in robots.txt</strong></li>
+            <li>Use a correct <strong>canonical tag</strong> to avoid duplicate content issues</li>
+            <li>Submit an <strong>XML sitemap</strong> via Google Search Console</li>
+            <li>Fix <strong>broken links (404s)</strong> — they waste crawl budget</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>Page Speed &amp; Core Web Vitals</h4>
+          <ul>
+            <li><strong>LCP</strong> (Largest Contentful Paint): load main content &lt;2.5s</li>
+            <li><strong>CLS</strong> (Cumulative Layout Shift): no unexpected layout jumps</li>
+            <li><strong>INP</strong> (Interaction to Next Paint): responsive to user actions</li>
+            <li>Compress images, minify CSS/JS, use CDN</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="comparison">
+        <div class="comparison-box">
+          <h4>Mobile-Friendliness</h4>
+          <ul>
+            <li>Google uses <strong>mobile-first indexing</strong> — your mobile version is the primary version</li>
+            <li>Test with Google's <strong>Mobile-Friendly Test</strong></li>
+            <li>Use responsive design, avoid interstitial pop-ups</li>
+          </ul>
+        </div>
+        <div class="comparison-box">
+          <h4>HTTPS &amp; Security</h4>
+          <ul>
+            <li>HTTPS is a lightweight <strong>ranking signal</strong> and a user trust signal</li>
+            <li>Ensure SSL certificate is valid and not expired</li>
+            <li>Redirect all HTTP pages to HTTPS with 301s</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>🛠️ Key Tools</h2>
+      <div style="margin-top:6px;">
+        <span class="tag">Semrush Site Audit</span>
+        <span class="tag">Google Search Console</span>
+        <span class="tag">PageSpeed Insights</span>
+        <span class="tag">Screaming Frog</span>
+        <span class="tag">Rich Results Test</span>
+      </div>
+
+      <div class="key-insight">
+        <p>💡 Run a <strong>Semrush Site Audit</strong> monthly. It surfaces crawl errors, Core Web Vitals issues, broken links, duplicate content, and missing meta elements — all in one report, prioritised by severity.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 12: Summary — Master Checklist + Key Insight
+  ============================================================ -->
+  <div class="slide">
+    <div class="container">
+      <h1>Summary — The Complete On-Page SEO Checklist</h1>
+
+      <h2>✅ 11-Task Master Reference</h2>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Task</th><th>What to Check</th><th>Primary KPI Impact</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>①</strong></td>
+            <td>Keyword Research</td>
+            <td>Volume, Personal KD%, Intent alignment</td>
+            <td>Traffic ↑, Relevance ↑</td>
+          </tr>
+          <tr>
+            <td><strong>②</strong></td>
+            <td>Title Tag</td>
+            <td>Keyword near start, ≤55 chars, no stuffing</td>
+            <td>CTR ↑</td>
+          </tr>
+          <tr>
+            <td><strong>③</strong></td>
+            <td>H1 Tag</td>
+            <td>One per page, keyword included, compelling</td>
+            <td>Engagement ↑</td>
+          </tr>
+          <tr>
+            <td><strong>④</strong></td>
+            <td>Meta Description</td>
+            <td>≤105 chars, keyword, unique value prop, soft CTA</td>
+            <td>CTR ↑</td>
+          </tr>
+          <tr>
+            <td><strong>⑤</strong></td>
+            <td>URL Slug</td>
+            <td>Short, hyphens, keyword, no dates/stop words</td>
+            <td>Crawlability ↑</td>
+          </tr>
+          <tr>
+            <td><strong>⑥</strong></td>
+            <td>Body Keywords</td>
+            <td>Keyword in first para, natural use, related terms</td>
+            <td>Rankings ↑</td>
+          </tr>
+          <tr>
+            <td><strong>⑦</strong></td>
+            <td>Content Quality</td>
+            <td>Accurate, original, intent-matched, structured, readable</td>
+            <td>Dwell time ↑, Bounce ↓</td>
+          </tr>
+          <tr>
+            <td><strong>⑧</strong></td>
+            <td>Header Tags</td>
+            <td>H1→H2→H3 hierarchy, descriptive, keyword-rich</td>
+            <td>AI citability ↑</td>
+          </tr>
+          <tr>
+            <td><strong>⑨</strong></td>
+            <td>Internal Links</td>
+            <td>Descriptive anchors, pillar→cluster linking, no overlinking</td>
+            <td>Link equity ↑, Conversion ↑</td>
+          </tr>
+          <tr>
+            <td><strong>⑩</strong></td>
+            <td>Visual Content</td>
+            <td>Alt text, compressed images, keyword file names, video captions</td>
+            <td>Engagement ↑, Image traffic ↑</td>
+          </tr>
+          <tr>
+            <td><strong>⑪</strong></td>
+            <td>Schema Markup</td>
+            <td>Correct type (FAQ, Product, Article…), JSON-LD, validated</td>
+            <td>Rich results → CTR ↑</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>🔁 The On-Page SEO Workflow Loop</h2>
+      <div class="callout">
+        <strong>Research</strong> (keywords) →
+        <strong>Write</strong> (quality content + natural keywords) →
+        <strong>Structure</strong> (H-tags, URLs, title, meta) →
+        <strong>Enrich</strong> (visuals, internal links, schema) →
+        <strong>Measure</strong> (CTR, rankings, conversions) →
+        <strong>Iterate</strong> (refresh &amp; improve)
+      </div>
+
+      <div class="key-insight">
+        <p>💡 Golden Rule: <em>Every page needs one clear keyword target → one matching content format → one primary CTA → one KPI to measure.</em> On-page SEO is not a one-time setup — it's a continuous quality improvement cycle that compounds over time.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
