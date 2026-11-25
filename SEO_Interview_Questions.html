@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Interview Questions: 27 Basics (Easy &amp; Medium)</title>
+<style>
+  :root{
+    --b1:#2d5f8d; --b2:#3a7ca5; --b3:#5ba8cf;
+    --ink:#1f2d3d; --muted:#5b6b7c; --line:#dfe8f1;
+    --bg:#eef4f9; --card:#ffffff;
+    --yellow:#fff8e1; --yellow-b:#f2c94c;
+    --blue-soft:#e8f3fb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;color:var(--ink);
+       background:var(--bg);line-height:1.6}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 20px 60px}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--b1),var(--b2) 55%,var(--b3));color:#fff;
+        border-radius:18px;padding:34px 34px 28px;box-shadow:0 10px 30px rgba(45,95,141,.25)}
+  .hero h1{margin:0 0 6px;font-size:30px;letter-spacing:.2px}
+  .hero p{margin:0;opacity:.92}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+        padding:4px 12px;border-radius:999px;font-size:13px}
+
+  /* Controls */
+  .controls{position:sticky;top:0;z-index:10;background:rgba(238,244,249,.95);backdrop-filter:blur(6px);
+            display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:14px 0;margin-top:8px;
+            border-bottom:1px solid var(--line)}
+  .controls .label{font-size:13px;color:var(--muted);margin-right:4px}
+  .btn{border:1px solid var(--b2);background:#fff;color:var(--b1);padding:6px 14px;border-radius:999px;
+       font:inherit;font-size:13px;cursor:pointer;transition:.2s}
+  .btn:hover{background:var(--blue-soft);transform:translateY(-1px)}
+  .btn.active{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;border-color:transparent}
+  .spacer{flex:1}
+
+  /* Card + tables */
+  .card{background:var(--card);border-radius:16px;padding:22px 24px;margin-top:20px;
+        box-shadow:0 4px 16px rgba(31,45,61,.06);border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px;overflow:hidden;border-radius:10px}
+  th{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff;text-align:left;padding:9px 12px;font-weight:600}
+  td{padding:9px 12px;border-bottom:1px solid var(--line)}
+  tr:nth-child(even) td{background:#f7fafd}
+  tr.total td{font-weight:700;background:var(--blue-soft)}
+  code{background:#eef3f8;padding:1px 6px;border-radius:5px;font-size:13.5px;color:var(--b1)}
+
+  /* Section header */
+  h2.sec{margin:40px 0 4px;font-size:22px;padding:10px 16px;border-left:6px solid var(--b1);
+         background:linear-gradient(90deg,rgba(45,95,141,.12),rgba(91,168,207,0));border-radius:0 10px 10px 0}
+  h2.sec span{background:linear-gradient(135deg,var(--b1),var(--b3));-webkit-background-clip:text;
+              background-clip:text;color:transparent}
+  .sec-note{color:var(--muted);font-size:14px;margin:4px 0 0 22px}
+
+  /* Question cards */
+  .q{position:relative;background:var(--card);border-radius:16px;margin-top:18px;padding:20px 24px 18px 24px;
+     border:1px solid var(--line);box-shadow:0 4px 14px rgba(31,45,61,.05);transition:.25s;overflow:hidden}
+  .q::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;
+             background:linear-gradient(90deg,var(--b1),var(--b2),var(--b3))}
+  .q:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(45,95,141,.14)}
+  .q-head{display:flex;gap:14px;align-items:flex-start}
+  .num{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+       background:linear-gradient(135deg,var(--b1),var(--b3));color:#fff;font-weight:700}
+  .q-title{flex:1;font-size:17.5px;font-weight:600;margin:5px 0 0}
+  .diff{flex:0 0 auto;font-size:12px;font-weight:600;padding:3px 11px;border-radius:999px;margin-top:6px}
+  .diff.easy{background:#e3f4ea;color:#1e7a46;border:1px solid #b9e3c9}
+  .diff.medium{background:#e6eefb;color:var(--b1);border:1px solid #bcd2ee}
+  .answer{margin-top:10px;padding-left:52px}
+  .answer p{margin:8px 0}
+  .answer ul,.answer ol{margin:8px 0;padding-left:22px}
+  .answer li{margin:3px 0}
+  .ok{color:#1e7a46;font-weight:600}.bad{color:#b23b3b;font-weight:600}
+
+  .follow{background:var(--yellow);border-left:4px solid var(--yellow-b);border-radius:10px;
+          padding:9px 14px;margin-top:12px;font-size:14.5px}
+  .follow b{color:#8a6d00}
+  .insight{background:var(--blue-soft);border-left:4px solid var(--b2);border-radius:10px;
+           padding:9px 14px;margin-top:12px;font-size:14.5px}
+  .insight b{color:var(--b1)}
+
+  .reveal{display:none;margin:10px 0 0 52px}
+  body.practice .answer{display:none}
+  body.practice .reveal{display:inline-block}
+  body.practice .q.open .answer{display:block}
+  body.practice .q.open .reveal{display:none}
+
+  .hidden{display:none !important}
+
+  /* Revision */
+  .rev{counter-reset:r;list-style:none;padding:0;margin:8px 0 0}
+  .rev li{counter-increment:r;position:relative;padding:9px 12px 9px 48px;border-bottom:1px dashed var(--line)}
+  .rev li::before{content:counter(r);position:absolute;left:8px;top:8px;width:28px;height:28px;border-radius:8px;
+                  background:linear-gradient(135deg,var(--b2),var(--b3));color:#fff;display:grid;place-items:center;
+                  font-size:13px;font-weight:700}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:36px}
+
+  @media (max-width:640px){
+    .answer,.reveal{padding-left:0;margin-left:0}
+    .hero h1{font-size:24px}
+  }
+  @media print{
+    body{background:#fff}
+    .controls{display:none}
+    body.practice .answer{display:block}
+    .reveal{display:none !important}
+    .q{break-inside:avoid;box-shadow:none}
+    h2.sec{break-before:page}
+    h2.sec.first{break-before:auto}
+    .hidden{display:block !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>SEO Interview Questions</h1>
+    <p>27 basic-level questions with model answers: Fundamentals · On-Page · Off-Page · Backlinks &amp; Domain Authority</p>
+    <div class="pills">
+      <span class="pill">27 Questions</span>
+      <span class="pill">15 Easy</span>
+      <span class="pill">12 Medium</span>
+      <span class="pill">Model answer + likely follow-up</span>
+    </div>
+  </header>
+
+  <div class="controls">
+    <span class="label">Difficulty:</span>
+    <button class="btn active" data-filter="all">All</button>
+    <button class="btn" data-filter="easy">Easy</button>
+    <button class="btn" data-filter="medium">Medium</button>
+    <span class="spacer"></span>
+    <button class="btn" id="practiceBtn">Practice mode: hide answers</button>
+  </div>
+
+  <section class="card">
+    <table>
+      <tr><th>Section</th><th>Questions</th><th>Easy</th><th>Medium</th></tr>
+      <tr><td>A. Fundamentals</td><td>1–5</td><td>4</td><td>1</td></tr>
+      <tr><td>B. On-Page SEO</td><td>6–16</td><td>6</td><td>5</td></tr>
+      <tr><td>C. Off-Page SEO</td><td>17–20</td><td>2</td><td>2</td></tr>
+      <tr><td>D. Backlinks &amp; Domain Authority</td><td>21–27</td><td>3</td><td>4</td></tr>
+      <tr class="total"><td>Total</td><td>27</td><td>15</td><td>12</td></tr>
+    </table>
+  </section>
+
+  <!-- ===================== A ===================== -->
+  <h2 class="sec first"><span>A. Fundamentals</span></h2>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">1</div><h3 class="q-title">What is SEO, and how is it different from SEM or PPC?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>SEO (Search Engine Optimisation) is the work of improving a website so it ranks higher in the <b>unpaid (organic)</b> results of a search engine. SEM (Search Engine Marketing) is the broader term and usually means <b>paid</b> search ads, such as Google Ads, where you pay per click (PPC). SEO takes months to build but keeps bringing traffic without a cost per click. PPC brings traffic straight away but stops when the budget stops.</p>
+      <div class="follow"><b>Follow-up:</b> When would you choose PPC over SEO for a new brand? <i>(A launch, a festive sale, or testing which keywords convert before investing in SEO content.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">2</div><h3 class="q-title">Explain crawling, indexing and ranking.</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <ul>
+        <li><b>Crawling:</b> Googlebot finds pages by following links and reading sitemaps.</li>
+        <li><b>Indexing:</b> Google reads and understands each page and stores it in its index (a huge library of pages).</li>
+        <li><b>Ranking:</b> When someone searches, Google picks the most relevant, useful pages from the index and puts them in order.</li>
+      </ul>
+      <p>A page can be crawled but not indexed (for example, thin or duplicate content), and only indexed pages can rank.</p>
+      <div class="follow"><b>Follow-up:</b> Where do you check whether a page is indexed? <i>(The URL Inspection tool and the Pages report in Google Search Console.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">3</div><h3 class="q-title">What are keywords? Explain short-tail and long-tail keywords.</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Keywords are the words and phrases people type into search engines. <b>Short-tail</b> keywords are broad, with 1–2 words, high volume, high competition and unclear intent (<i>"running shoes"</i>). <b>Long-tail</b> keywords are specific, with 3+ words, lower volume, lower competition and clear intent (<i>"best running shoes for flat feet under ₹3000"</i>). Long-tail keywords usually convert better and are easier for a new site to rank for.</p>
+      <div class="follow"><b>Follow-up:</b> Which tools do you use for keyword research? <i>(Google Keyword Planner, Google Search Console, Ahrefs, Semrush, and Google autocomplete with "People also ask".)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">4</div><h3 class="q-title">What is search intent? Name its main types.</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Search intent is the <b>reason behind a search</b>, meaning what the user actually wants to get done. There are four main types:</p>
+      <table>
+        <tr><th>Intent</th><th>User wants to…</th><th>Example</th></tr>
+        <tr><td>Informational</td><td>Learn something</td><td>"what is SIP in mutual funds"</td></tr>
+        <tr><td>Navigational</td><td>Reach a specific site</td><td>"Zerodha Kite login"</td></tr>
+        <tr><td>Commercial</td><td>Compare before buying</td><td>"Nykaa vs Purplle for skincare"</td></tr>
+        <tr><td>Transactional</td><td>Buy or act now</td><td>"buy boAt Airdopes online"</td></tr>
+      </table>
+      <p>If a page doesn't match the intent, it won't rank well even when the keyword is a perfect fit. One way to check intent is to look at what currently ranks on page 1.</p>
+      <div class="follow"><b>Follow-up:</b> A blog post is ranking for "buy protein powder". Is that a problem? <i>(Yes. The intent is transactional, so a product or category page fits better.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">5</div><h3 class="q-title">What is the difference between white-hat and black-hat SEO?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p><b>White-hat</b> SEO follows Google's guidelines: useful content, a good user experience and links earned naturally. <b>Black-hat</b> SEO tries to trick the algorithm, with tactics such as keyword stuffing, hidden text, cloaking (showing Google different content from what users see), private blog networks (PBNs) and buying links. Black-hat tactics can bring quick gains, but they risk penalties that can remove a site from search results.</p>
+      <div class="follow"><b>Follow-up:</b> What is "grey-hat"? <i>(Tactics in between, such as aggressive guest posting just for links.)</i></div>
+    </div>
+  </article>
+
+  <!-- ===================== B ===================== -->
+  <h2 class="sec"><span>B. On-Page SEO</span></h2>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">6</div><h3 class="q-title">What is on-page SEO? List its key elements.</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>On-page SEO is the optimisation you do <b>on your own website's pages</b>, covering both the content and the HTML. Key elements are the title tag, meta description, heading tags (H1–H6), URL structure, content quality and keyword placement, internal links, image alt text, structured data, page speed and mobile-friendliness.</p>
+      <div class="follow"><b>Follow-up:</b> What is the difference between on-page and technical SEO? <i>(Technical SEO covers how the whole site is crawled and indexed: site speed, sitemaps, canonicals. On-page focuses on each individual page.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">7</div><h3 class="q-title">What are the best practices for a title tag?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <ul>
+        <li>Keep it to roughly <b>50–60 characters</b> (about 600 pixels) so it isn't cut off in results.</li>
+        <li>Put the main keyword near the start.</li>
+        <li>Make every page's title unique.</li>
+        <li>Add the brand name at the end where it fits: <i>"Men's Running Shoes – Buy Online | Campus"</i></li>
+        <li>Write it for clicks, not just for keywords.</li>
+      </ul>
+      <div class="follow"><b>Follow-up:</b> Why does Google sometimes show a different title from the one you wrote? <i>(Google rewrites titles that are too long, stuffed with keywords, or don't match the page well.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">8</div><h3 class="q-title">Is the meta description a ranking factor? Why write one?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>No, it's <b>not a direct ranking factor</b>. It still matters because it's the snippet shown under the title in search results, which makes it your "ad copy". A good one raises the <b>click-through rate (CTR)</b>, the share of people who see your result and click it. Keep it to roughly 150–160 characters, include the keyword (Google shows it in bold when it matches the search), and add a clear reason to click.</p>
+      <div class="follow"><b>Follow-up:</b> What happens if you leave it empty? <i>(Google pulls text from the page itself, which may not be the best pitch.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">9</div><h3 class="q-title">How should heading tags (H1–H6) be used?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Headings give a page a clear structure for both readers and search engines.</p>
+      <ul>
+        <li>Use <b>one H1 per page</b>, describing the main topic and usually including the main keyword.</li>
+        <li>Use H2s for main sections and H3s for sub-points inside them, like a table of contents.</li>
+        <li>Don't choose a heading level just to get a certain font size; use CSS for styling.</li>
+      </ul>
+      <div class="follow"><b>Follow-up:</b> Does having two H1s hurt rankings? <i>(Not badly, according to Google, but one clear H1 is still the clean convention.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">10</div><h3 class="q-title">What makes an SEO-friendly URL?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>It's short, readable, uses lowercase, separates words with <b>hyphens</b>, includes the keyword, and has no unnecessary parameters.</p>
+      <ul>
+        <li><span class="ok">✔ Good:</span> <code>example.in/womens-kurtas/cotton</code></li>
+        <li><span class="bad">✘ Poor:</span> <code>example.in/cat.php?id=4471&amp;ref=xyz</code></li>
+      </ul>
+      <div class="follow"><b>Follow-up:</b> What should you do if you change a URL? <i>(Set up a 301 permanent redirect from the old URL to the new one so you keep its traffic and link value.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">11</div><h3 class="q-title">How do you optimise images for SEO?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <ul>
+        <li>Use descriptive file names (<code>red-silk-saree.webp</code>, not <code>IMG_2231.jpg</code>).</li>
+        <li>Write <b>alt text</b> that describes the image. It helps accessibility (screen readers) and image search.</li>
+        <li>Compress images and use modern formats such as WebP or AVIF.</li>
+        <li>Set width and height so the page doesn't jump around while loading.</li>
+        <li>Lazy-load images that sit below the fold (further down the page).</li>
+      </ul>
+      <div class="follow"><b>Follow-up:</b> Should you put keywords in every alt text? <i>(Only where they naturally describe the image. Stuffing alt text is still keyword stuffing.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">12</div><h3 class="q-title">What is internal linking and why does it matter?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Internal links connect pages <b>within the same website</b>. They:</p>
+      <ol>
+        <li>help Google discover and crawl pages,</li>
+        <li>pass authority from strong pages to weaker ones,</li>
+        <li>show which pages are most important, and</li>
+        <li>keep users moving through the site.</li>
+      </ol>
+      <p>Use descriptive <b>anchor text</b> (the clickable words), such as "best hair oils for dandruff" rather than "click here". Make sure no important page is an <b>orphan page</b>, meaning a page with no internal links pointing to it.</p>
+      <div class="follow"><b>Follow-up:</b> What is a topic cluster? <i>(A main "pillar" page linked to and from several detailed sub-topic pages.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">13</div><h3 class="q-title">What is duplicate content, and how does a canonical tag help?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Duplicate content is the same or very similar content available at more than one URL. It's common on e-commerce sites with filters, such as <code>/shoes?color=black</code> and <code>/shoes?sort=price</code>. Google has to guess which version to rank, and the ranking signals get split between them. The <b>canonical tag</b> (<code>&lt;link rel="canonical" href="..."&gt;</code>) tells Google which URL is the preferred, main version.</p>
+      <div class="follow"><b>Follow-up:</b> Is the canonical tag a command? <i>(No. It's a strong hint, and Google can ignore it if other signals contradict it.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">14</div><h3 class="q-title">What is keyword cannibalisation?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Keyword cannibalisation happens when <b>two or more of your own pages compete for the same keyword and intent</b>. Google can't tell which one to rank, so both may rank lower. For example, a blog post "Best Smartwatches 2026" and a category page "Smartwatches" might both target "best smartwatch". To fix it, merge the pages, give each one a clearly different focus, or use a canonical or 301 redirect to consolidate them.</p>
+      <div class="follow"><b>Follow-up:</b> How do you spot it? <i>(In Search Console's Performance report, filter by the search query and see whether several of your URLs swap places for it.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">15</div><h3 class="q-title">What are Core Web Vitals?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Core Web Vitals are Google's three measures of real-user page experience:</p>
+      <table>
+        <tr><th>Metric</th><th>Measures</th><th>"Good" threshold</th></tr>
+        <tr><td><b>LCP</b> – Largest Contentful Paint</td><td>Loading: how fast the main content appears</td><td>≤ 2.5 s</td></tr>
+        <tr><td><b>INP</b> – Interaction to Next Paint</td><td>Responsiveness to taps and clicks (replaced FID in March 2024)</td><td>≤ 200 ms</td></tr>
+        <tr><td><b>CLS</b> – Cumulative Layout Shift</td><td>Visual stability: does the page jump around?</td><td>≤ 0.1</td></tr>
+      </table>
+      <p>They are a ranking signal, but a modest one. Content relevance still matters more. They matter a lot in India, where most traffic comes from mid-range Android phones on patchy mobile networks.</p>
+      <div class="follow"><b>Follow-up:</b> Which tools report them? <i>(PageSpeed Insights, the Core Web Vitals report in Search Console, Lighthouse.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">16</div><h3 class="q-title">What is schema markup (structured data)?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Schema markup is code, preferably in <b>JSON-LD</b> format, that tells search engines exactly what a page contains: a product, review, recipe, article, event, organisation, and so on. It can make the page eligible for <b>rich results</b> such as star ratings, prices, stock status and breadcrumbs, which improve visibility and CTR. Schema is not a direct ranking factor, and it doesn't guarantee rich results.</p>
+      <div class="follow"><b>Follow-up:</b> How do you test it? <i>(Google's Rich Results Test and the Schema Markup Validator.)</i></div>
+    </div>
+  </article>
+
+  <!-- ===================== C ===================== -->
+  <h2 class="sec"><span>C. Off-Page SEO</span></h2>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">17</div><h3 class="q-title">What is off-page SEO? Is it only about backlinks?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Off-page SEO covers everything <b>outside your website</b> that affects how search engines and users judge its trust and authority. Backlinks are the biggest part, but it also includes brand mentions, digital PR, reviews and ratings, the Google Business Profile, social presence, influencer and community activity (Reddit, Quora, YouTube), and citations in local directories.</p>
+      <div class="follow"><b>Follow-up:</b> Why do off-page signals matter? <i>(Your own website can say anything about itself. Signals from outside work as independent votes of trust.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">18</div><h3 class="q-title">What is local SEO, and why is the Google Business Profile important?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Local SEO helps a business appear in <b>"near me" and location-based searches</b>, especially the <b>Local Pack</b> (the map with three listings). The <b>Google Business Profile (GBP)</b> is the main tool for this: correct category, opening hours, photos, regular posts, and replies to reviews. <b>NAP consistency</b> also matters, meaning the Name, Address and Phone number should be exactly the same everywhere online (Justdial, Sulekha, IndiaMART, the website).</p>
+      <div class="follow"><b>Follow-up:</b> What are the three main local ranking factors? <i>(Relevance, distance and prominence.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">19</div><h3 class="q-title">Does social media directly affect SEO rankings?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p><b>Not directly.</b> Google has said likes and shares are not ranking factors, and most social links are nofollow. Social media still helps <b>indirectly</b>: content gets seen by more people, some of whom link to it naturally; branded searches go up; pages get discovered faster; and social profiles often rank for brand searches themselves.</p>
+      <div class="follow"><b>Follow-up:</b> Give an example of the indirect effect. <i>(A viral Instagram reel from a D2C brand leads news sites to write about it and link to the brand's website.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">20</div><h3 class="q-title">What are unlinked brand mentions, and how do you use them?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>An unlinked brand mention is a web page that <b>names your brand but doesn't link to you</b>. Search engines may still count mentions as a sign of authority, but a link is worth more. To use them, track mentions with Google Alerts, Ahrefs or Brand24, then contact the author politely and ask them to add a link. These are among the easiest links to win, because the author already knows and talks about you.</p>
+      <div class="follow"><b>Follow-up:</b> What is an "implied link"? <i>(Another name for a brand mention with no hyperlink.)</i></div>
+    </div>
+  </article>
+
+  <!-- ===================== D ===================== -->
+  <h2 class="sec"><span>D. Backlinks &amp; Domain Authority</span></h2>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">21</div><h3 class="q-title">What is a backlink, and why does it matter?</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>A backlink is a link <b>from another website to yours</b>. Google treats it as a vote of confidence: if a trusted site links to you, your content is probably useful. Backlinks help with <b>discovery</b> (Google finds your pages by following them), with <b>authority</b> (link equity, sometimes called "link juice", is passed to your page), and with <b>referral traffic</b>. One link from a respected publication such as <i>The Economic Times</i> is worth far more than hundreds from spammy directories.</p>
+      <div class="follow"><b>Follow-up:</b> Is it quality or quantity? <i>(Quality and relevance, every time.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">22</div><h3 class="q-title">Explain dofollow, nofollow, sponsored and UGC links.</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <table>
+        <tr><th>Attribute</th><th>Meaning</th><th>Typical use</th></tr>
+        <tr><td>(default, "dofollow")</td><td>Normal link that passes authority</td><td>Editorial links</td></tr>
+        <tr><td><code>rel="nofollow"</code></td><td>"Don't pass my endorsement"</td><td>Links you don't vouch for</td></tr>
+        <tr><td><code>rel="sponsored"</code></td><td>Paid or affiliate link</td><td>Ads, paid placements, affiliate links</td></tr>
+        <tr><td><code>rel="ugc"</code></td><td>User-generated content</td><td>Comments, forum posts</td></tr>
+      </table>
+      <p>Since 2019, Google has treated nofollow, sponsored and UGC as <b>hints</b>, not strict rules. Paid links <b>must</b> be marked sponsored or nofollow, or they break Google's spam policies.</p>
+      <div class="follow"><b>Follow-up:</b> Are nofollow links worthless? <i>(No. They bring traffic and visibility, and a natural link profile includes a mix of both.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">23</div><h3 class="q-title">What makes a backlink high-quality?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <ul>
+        <li><b>Relevance:</b> the linking site is in your niche (a fitness blog linking to a protein brand).</li>
+        <li><b>Authority and trust</b> of the linking domain.</li>
+        <li><b>Editorial placement:</b> a link inside the main content, not a footer, sidebar or "partners" page.</li>
+        <li><b>Natural anchor text.</b></li>
+        <li><b>Real traffic</b> on the linking page.</li>
+        <li><b>Dofollow</b> status, usually.</li>
+        <li><b>Unique referring domain:</b> 10 links from 10 different sites are worth more than 10 links from one site.</li>
+      </ul>
+      <div class="follow"><b>Follow-up:</b> What is a referring domain? <i>(A unique website linking to you. 50 backlinks might come from only 5 referring domains.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">24</div><h3 class="q-title">What are the types of anchor text, and what is over-optimisation?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <table>
+        <tr><th>Type</th><th>Example (for a sunscreen page)</th></tr>
+        <tr><td>Exact match</td><td>"best sunscreen for oily skin"</td></tr>
+        <tr><td>Partial match</td><td>"this sunscreen guide for oily skin"</td></tr>
+        <tr><td>Branded</td><td>"Minimalist"</td></tr>
+        <tr><td>Naked URL</td><td>"beminimalist.co"</td></tr>
+        <tr><td>Generic</td><td>"click here", "read more"</td></tr>
+      </table>
+      <p><b>Over-optimisation</b> is when too many backlinks use the same exact-match anchor. It looks manipulative and can trigger spam filters; Google's Penguin update targeted this pattern. A natural link profile is mostly <b>branded and naked-URL</b> anchors.</p>
+      <div class="follow"><b>Follow-up:</b> Who controls anchor text? <i>(On earned links, the linking site. That's why a natural mix shows up on its own.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">25</div><h3 class="q-title">What is Domain Authority (DA)? Does Google use it?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>Domain Authority is a score created by <b>Moz</b>, a third-party SEO tool company. It predicts how well a website is likely to rank, on a <b>1–100 scale</b>. It is mainly calculated from the site's backlink profile: how many unique websites link to it and how strong those websites are.</p>
+      <ul>
+        <li><b>It's not a Google metric.</b> Google does not use DA in its rankings.</li>
+        <li><b>The scale is logarithmic:</b> moving from 70 to 80 is much harder than moving from 20 to 30.</li>
+        <li><b>It's relative:</b> compare your DA with competitors in your niche rather than judging the number on its own.</li>
+        <li><b>It's useful for</b> benchmarking against competitors, screening sites for link outreach, and tracking authority over time.</li>
+        <li><b>You raise it by</b> earning quality links from many different relevant websites, not by chasing the number.</li>
+      </ul>
+      <div class="insight"><b>Key insight:</b> DA is a thermometer, not the fever. It reflects authority but doesn't cause rankings.</div>
+      <div class="follow"><b>Follow-up:</b> A DA 70 site wants ₹15,000 for a link. Good deal? <i>(Check its real traffic, relevance and whether it sells links to everyone. An unmarked paid link also breaks Google's policy.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="easy">
+    <div class="q-head"><div class="num">26</div><h3 class="q-title">Name some white-hat link-building techniques.</h3><span class="diff easy">Easy</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <ul>
+        <li><b>Linkable assets:</b> original data, research reports, calculators, free tools. Example: an "EMI calculator" from a fintech brand.</li>
+        <li><b>Digital PR:</b> newsworthy stories or data that journalists pick up.</li>
+        <li><b>Guest posting</b> on relevant, quality sites, to share expertise rather than just to collect links.</li>
+        <li><b>Broken link building:</b> find dead links on other sites and suggest your page as the replacement.</li>
+        <li><b>Reclaiming unlinked brand mentions.</b></li>
+        <li><b>The Skyscraper technique:</b> create something better than content that already has many links, then contact the sites linking to it.</li>
+        <li><b>Partnerships:</b> suppliers, associations, college and community links.</li>
+      </ul>
+      <div class="follow"><b>Follow-up:</b> Which one scales best? <i>(Linkable assets combined with digital PR, because they earn links passively over time.)</i></div>
+    </div>
+  </article>
+
+  <article class="q" data-diff="medium">
+    <div class="q-head"><div class="num">27</div><h3 class="q-title">A new Indian D2C skincare brand has zero backlinks and a small budget. How would you build authority in the first 3 months?</h3><span class="diff medium">Medium</span></div>
+    <button class="btn reveal">Show answer</button>
+    <div class="answer">
+      <p>A strong answer has a clear structure:</p>
+      <ol>
+        <li><b>Foundations:</b> Google Business Profile, consistent brand profiles (Instagram, LinkedIn, YouTube), listings on Amazon and Nykaa that send people searching for the brand.</li>
+        <li><b>Founder-led PR:</b> pitch the founder story to startup media (YourStory, Inc42) and answer journalist sourcing requests.</li>
+        <li><b>One linkable asset:</b> for example, an "Indian Skin Type &amp; Climate Guide" or a survey of 1,000 customers on skincare habits, giving journalists a reason to link.</li>
+        <li><b>Creator collaborations</b> that include blog reviews with links, not only Instagram posts.</li>
+        <li><b>Community presence</b> on Reddit (r/IndianSkincareAddicts) and Quora, giving real answers.</li>
+        <li><b>Track progress</b> with referring domains, Domain Authority trend, branded search volume (Search Console) and referral traffic.</li>
+      </ol>
+      <div class="insight"><b>What interviewers look for:</b> no paid-link shortcuts, a focus on brand rather than just links, and clear measurement.</div>
+      <div class="follow"><b>Follow-up:</b> Why does branded search volume matter? <i>(It shows real brand demand, a strong sign of authority to both users and search engines.)</i></div>
+    </div>
+  </article>
+
+  <!-- ===================== Revision ===================== -->
+  <h2 class="sec"><span>Quick Revision: 10 Lines to Remember</span></h2>
+  <section class="card">
+    <ol class="rev">
+      <li>Crawl → Index → Rank. A page that isn't indexed can't rank.</li>
+      <li>Intent beats keyword. Check what already ranks on page 1.</li>
+      <li>Title tag ≈ 50–60 characters, keyword near the start. Meta description affects CTR, not rankings.</li>
+      <li>One H1 per page, logical H2/H3 order.</li>
+      <li>Internal links need descriptive anchors. No important page should be an orphan.</li>
+      <li>Canonical = "this is the main version" (a hint, not a command).</li>
+      <li>Core Web Vitals: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1.</li>
+      <li>Backlinks: relevance + authority + editorial placement &gt; quantity.</li>
+      <li>Paid links must be marked <code>sponsored</code> or <code>nofollow</code>. A natural anchor profile is mostly branded.</li>
+      <li>Domain Authority is Moz's 1–100 predictive score, not a Google metric. Earn links and DA follows.</li>
+    </ol>
+  </section>
+
+  <footer>SEO Interview Questions · Basic level (Easy &amp; Medium) · Fundamentals, On-Page, Off-Page, Backlinks &amp; Domain Authority</footer>
+</div>
+
+<script>
+  // Difficulty filter
+  const filterBtns = document.querySelectorAll('[data-filter]');
+  filterBtns.forEach(btn => btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.q').forEach(q => {
+      q.classList.toggle('hidden', f !== 'all' && q.dataset.diff !== f);
+    });
+  }));
+
+  // Practice mode
+  const practiceBtn = document.getElementById('practiceBtn');
+  practiceBtn.addEventListener('click', () => {
+    const on = document.body.classList.toggle('practice');
+    practiceBtn.classList.toggle('active', on);
+    practiceBtn.textContent = on ? 'Practice mode: on (show all)' : 'Practice mode: hide answers';
+    document.querySelectorAll('.q').forEach(q => q.classList.remove('open'));
+  });
+  document.querySelectorAll('.reveal').forEach(b =>
+    b.addEventListener('click', () => b.closest('.q').classList.add('open')));
+</script>
+</body>
+</html>
